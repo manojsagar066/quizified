@@ -8,7 +8,7 @@ const MongoClient = require('mongodb').MongoClient;
 const score = require('./models/score')
 const port = 8080
 
-const uri = "mongodb+srv://RFIDpayments:Ff6RfZyRN5arkgvz@payments-ukurt.mongodb.net/test?retryWrites=true&w=majority";
+const uri = "give your mongodb uri to connect to the database";   //your mongodb uri
 mongoose.connect(uri,{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{
     console.log("db open");
 }).catch((err)=>{
