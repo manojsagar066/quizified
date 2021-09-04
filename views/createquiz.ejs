@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <!--Import Google Icon Font-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizified</title>
+    <style>
+        .section{
+          padding-top: 4vw;
+          padding-bottom: 4vw;
+      
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-wrapper teal darken-2">
+            <div class="container">
+                <a href="#about" class="brand-logo">Quizified</a>
+                <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#Home" class="">Home</a></li>
+                    <li><a href="#contact" class="">Contact</a></li>
+                    <li><a href="#about" class="">About</a></li>
+                </ul>
+                <ul class="sidenav grey lighten-2" id="mobile-menu">
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <h4>Question no. <%=count %></h4>
+    <!--attend quiz-->
+
+    </div>
+    <div class="container section scrollspy" id="quiz_result">
+        <div class="row">
+        <div class="col s12 l5 offset-l2">
+            <form action="/createquestion" method="POST">
+                <div class="input-field">
+                    email:<input type="text" id="email" name="email" value=<%=email%> >
+                    <label for="email"></label>
+                <div class="input-field">
+                    1<input type="text" id="question" name="question">
+                    <label for="question">type the question</label>
+                </div>
+                <div class="input-field">
+                    1<input type="text" id="option1" name="op1">
+                    <label for="option1">option 1</label>
+                </div>
+                <div class="input-field">
+                    2<input type="text" id="option2" name="op2">
+                    <label for="option2">option 2</label>
+                </div>
+                <div class="input-field">
+                    
+                    3<input type="text" id="option3" name="op3">
+                    <label for="option3">option 3</label>
+                </div>
+                <div class="input-field">
+                    4<input type="text" id="option4" name="op4">
+                    <label for="option4">option 4</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="op" name="c_op">
+                    <label for="op">correct option number</label>
+                </div>
+                <div class="input-field center">
+                    <button class="waves-effect waves-light btn" type="submit">Add question</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('.sidenav').sidenav();
+        $('.scrollspy').scrollSpy();
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <!--Import Google Icon Font-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizified</title>
+    <style>
+        .section{
+          padding-top: 4vw;
+          padding-bottom: 4vw;
+      
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-wrapper teal darken-2">
+            <div class="container">
+                <a href="#about" class="brand-logo">Quizified</a>
+                <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#" class="">Home</a></li>
+                    <li><a href="#" class="">Contact</a></li>
+                    <li><a href="#" class="">About</a></li>
+                </ul>
+                <ul class="sidenav grey lighten-2" id="mobile-menu">
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+
+    <!--entry-->
+    <div class="container section scrollspy">
+        <a href = "#attend_quiz" class="waves-effect waves-light btn-large">Create quiz</a>
+        <a href = "#create_quiz" class="waves-effect waves-light btn-large">Attend quiz</a>
+        <a href = "#quiz_result" class="waves-effect waves-light btn-large">Result</a>
+    </div>
+
+
+    <!--attend quiz-->
+    <div class="container section scrollspy" id="attend_quiz">
+        <div class="row">
+        <div class="col s12 l5 offset-l2">
+            <form action="/attend" method="POST">
+                <div class="input-field">
+                    <i class="material-icons prefix">person</i>
+                    <input type="text" id="student_name" name='student_name'>
+                    <label for="student_name">Your name</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">email</i>
+                    <input type="email" id="mail" name="email">
+                    <label for="mail">Your email</label>
+                </div>
+                <div class="input-field">
+                  <i class="material-icons prefix">assignment_ind</i>
+                  <input type="text" id="quizid" name="quiz_id">
+                  <label for="quizid">quiz id</label>
+                </div>
+                <div class="input-field center">
+                    <button class="waves-effect waves-light btn" type="submit">start quiz</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <!--create quiz-->
+    <div class="container section scrollspy" id="create_quiz">
+        <div class="row">
+        <div class="col s12 l5 offset-l2">
+            <form action="/create" method="POST">
+                <div class="input-field">
+                    <i class="material-icons prefix">person</i>
+                    <input type="text" id="name" name="name">
+                    <label for="name">Your name</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">email</i>
+                    <input type="email" id="email" name="email">
+                    <label for="email">Your email</label>
+                </div>
+                <div class="input-field">
+                  <i class="material-icons prefix">assignment</i>
+                  <input type="text" id="num" name="num">
+                  <label for="num">number of questions</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">assessment</i>
+                    <input type="text" id="title" name="title">
+                    <label for="title">quiz title</label>
+                  </div>
+                <div class="input-field center">
+                    <button class="waves-effect waves-light btn" type="submit">Create quiz</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <!--quiz result-->
+    <div class="container section scrollspy" id="quiz_result">
+        <div class="row">
+        <div class="col s12 l5 offset-l2">
+            <form action="/result" method="POST">
+                <div class="input-field">
+                    <i class="material-icons prefix">assignment</i>
+                    <input type="text" id="quiz_id" name="quiz_id">
+                    <label for="quiz_id">enter quiz_id</label>
+                </div>
+                <div class="input-field center">
+                    <button class="waves-effect waves-light btn" type="submit">Check Result</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <footer class="page-footer teal darken-2" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 l6">
+                    <h5>About Us</h5>
+                    <p class="grey-text text-lighten-3">Quizified helps you to conduct online quizes.</p>
+                </div>
+            </div>
+            <div class="container right-align">&copy;2021 Quizified</div>
+        </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('.sidenav').sidenav();
+        $('.scrollspy').scrollSpy();
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <!--Import Google Icon Font-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizified</title>
+    <style>
+        .section{
+          padding-top: 4vw;
+          padding-bottom: 4vw;
+      
+        }
+        .question-box{
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-wrapper teal darken-2">
+            <div class="container">
+                <a href="#about" class="brand-logo">Quizified</a>
+                <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#Home" class="">Home</a></li>
+                    <li><a href="#contact" class="">Contact</a></li>
+                    <li><a href="#about" class="">About</a></li>
+                </ul>
+                <ul class="sidenav grey lighten-2" id="mobile-menu">
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header><br><br>
+    
+    <div class="container">
+        <ul class="collection">
+            <% for(let d of doc){%>
+            <li class="collection-item avatar">
+              <i class="material-icons circle teal darken-2">assignment</i>
+              <span class="title"><%=d.student_name%></span>
+              <p><%=d.email%></p>
+              <h6 class="secondary-content">Score = <%=d.score%></h6>
+            </li>
+            <%}%>
+        </ul>
+    </div>
+    
+
+   
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script>
+    //function myfun(value){if (value==question.op){score+=1}}
+    $(document).ready(function(){
+        $('.sidenav').sidenav();
+        $('.scrollspy').scrollSpy();
+    });
+
+    </script>
+</body>
+</html>
+
